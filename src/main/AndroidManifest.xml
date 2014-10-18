@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vedidev.nativebridge.cocos2dx">
+
+    <application android:allowBackup="true">
+
+    </application>
+
+</manifest>
