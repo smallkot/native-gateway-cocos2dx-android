@@ -1,5 +1,7 @@
 package com.vedidev.nativebridge.cocos2dx;
 
+import android.app.Activity;
+
 import com.vedidev.nativebridge.BunchManager;
 import com.vedidev.nativebridge.JsonSerializer;
 import com.vedidev.nativebridge.ProcessorEngine;
@@ -18,6 +20,9 @@ public class Cocos2dxGatewayAdapter {
     public static String dispatch(String strParams) {
         if (!contextSet) {
             BunchManager.getInstance().setContext(Cocos2dxActivity.getContext());
+            if (Cocos2dxActivity.getContext() instanceof Activity) {
+                BunchManager.getInstance().setActivity((Activity) Cocos2dxActivity.getContext());
+            }
             contextSet = true;
         }
 
